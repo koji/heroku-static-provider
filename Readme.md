@@ -2,8 +2,20 @@
 
 Static site provider for Heroku. This still works well in 2021 🎉
 
+## Test locally
+```zsh
+# install express
+$ yarn
+$ node server.js
+Server listening on port 3000
+GET / 200 8.069 ms - 320
 
-## Installation
+```
+Then open http://localhost:3000
+
+
+
+## Installation on heroku
 
 You need sign-in or sign-up to Heroku.
 ```zsh
