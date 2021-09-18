@@ -1,20 +1,20 @@
+const express = require("express");
+const app = express();
 
-var express = require('express');
-var app = express();
+const user = process.env.USER;
+const pass = process.env.PASS;
+const PORT = 3000;
 
-var user = process.env.USER;
-var pass = process.env.PASS;
-
-app.set('port', process.env.PORT || 3000);
+app.set("port", process.env.PORT || PORT);
 
 if (user && pass) {
   app.use(express.basicAuth(user, pass));
 }
 
-app.use(express.logger('dev'));
+app.use(express.logger("dev"));
 app.use(express.compress());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
-app.listen(app.get('port'), function() {
-  console.log('Server listening on port %s', app.get('port'));
+app.listen(app.get("port"), () => {
+  console.log(`Server listening on port ${app.get("port")}`);
 });
