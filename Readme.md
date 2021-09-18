@@ -13,7 +13,7 @@ GET / 200 8.069 ms - 320
 ```
 Then open http://localhost:3000
 
-
+![sample](./image/sample.png)
 
 ## Installation on heroku
 

@@ -1,4 +1,6 @@
 const express = require("express");
+const logger = require("morgan");
+const compression = require("compression");
 const app = express();
 
 const user = process.env.USER;
@@ -11,8 +13,8 @@ if (user && pass) {
   app.use(express.basicAuth(user, pass));
 }
 
-app.use(express.logger("dev"));
-app.use(express.compress());
+app.use(logger("dev"));
+app.use(compression());
 app.use(express.static(__dirname + "/public"));
 
 app.listen(app.get("port"), () => {
